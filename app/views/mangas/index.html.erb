@@ -1,0 +1,26 @@
+<h1>My manga list</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Mangaka</th>
+            <th scope="col">Collected</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% @mangas.each do |manga| %>
+                <td><%= manga.title %></td>
+                <td><%= manga.mangaka %></td>
+                <td><%= manga.collected %></td>
+                <td><%= manga.status %></td>
+                <td>
+                    <%= link_to 'Show', manga_path(manga.id), class: "btn btn-primary" %>
+                </td>
+            <% end %>
+        </tr>
+    </tbody>
+</table>
