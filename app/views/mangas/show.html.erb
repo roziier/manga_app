@@ -1,0 +1,22 @@
+<h1 id="show" class="text-uppercase font-weight-bold text-center">Manga information</h1>
+
+<div id="show_details" class="text-center">
+    <div>
+        Title: <%= @manga.title %>
+    </div>
+    <div>
+        Mangaka: <%= @manga.mangaka %>
+    </div>
+    <div>
+        Collected: <%= @manga.collected %>
+    </div>
+    <div>
+        Status: <%= @manga.status %>
+    </div>
+    <div>
+        <%= link_to 'Back to my list', mangas_path, class: "btn btn-primary" %>
+        <%= link_to 'Edit', mangas_path, class: "btn btn-warning" %>
+        <%= link_to 'Delete', manga_path(@manga), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    </div>
+
+</div>

@@ -1,0 +1,44 @@
+<h1 id="new" class="text-uppercase font-weight-bold text-center">Add a new manga</h1>
+
+<% if @manga.errors.any? %>
+    <% @manga.errors.full_messages.each do |msg| %>
+        <li style="color:red">
+            <%= msg %>
+        </li>
+    <% end %>
+<% end %>
+
+<div id="show_details2">
+<%= form_with(model: @manga, data: { turbo: false }, local: true) do |f| %>
+
+    <div class="mb-3">
+      <%= f.label :title, class: "form-label" %>
+      <br/>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="mb-5">
+      <%= f.label :mangaka, class: "form-label" %>
+      <br/>
+      <%= f.text_area :mangaka, class: "form-control" %>
+      </div>
+
+    <div class="mb-3">
+      <%= f.label :collected, class: "form-label" %>
+      <br/>
+      <%= f.text_area :collected, class: "form-control" %>
+      </div>
+
+    <div class="mb-3">
+      <%= f.label :status, class: "form-label" %>
+      <br/>
+      <%= f.text_area :status, class: "form-control" %>
+    </div>
+
+    <div class="btn btn-primary">
+      <%= f.submit %>
+    <div>
+    
+<% end %>
+
+</div>
