@@ -44,7 +44,7 @@
  INDEX PAGE - TITLE AND TABLE
  */
 
- #index, #show, #new {
+ #index, #show, #new, #edit {
     margin: 30px;
  }
 
@@ -65,7 +65,7 @@
     margin-left: 20%;
 }
 
-#show_details2 {
+.show_details2 {
     font-size: 20px;
     border-color:grey;
     border-width: 1px;
