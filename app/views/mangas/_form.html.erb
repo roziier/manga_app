@@ -1,0 +1,21 @@
+<%= form_with(model: @manga, data: { turbo: false }, local: true) do |f| %>
+  <div class="my_container roboto-condensed-text">
+  <div>
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div>
+    <%= f.label :mangaka, class: "form-label" %>
+    <%= f.text_field :mangaka, class: "form-control" %>
+  </div>
+  <div>
+    <%= f.label :collected, class: "form-label" %>
+    <%= f.text_field :collected, class: "form-control" %>
+  </div>
+  <div>
+    <%= f.label :status, class: "form-label" %>
+    <%= f.text_field :status, class: "form-control" %>
+  </div>
+    <div><%= f.submit class: "btn btn btn-outline-secondary"%></div>
+  </div>
+<% end %>

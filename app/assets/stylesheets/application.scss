@@ -18,6 +18,7 @@
  body{
     margin: 0 auto;
     padding: 0;
+    background-color: sandybrown;
  }
 
 .my_bck {
@@ -55,21 +56,57 @@
     width: 80%;
  }
 
-#show_details {
-    font-size: 40px;
-    border-style: solid;
-    border-color: grey;
-    border-width: 3px;
-    width: 60%;
-    margin-right: 20%;
-    margin-left: 20%;
+ .my_nav {
+    display: flex;
+    justify-content: space-between;
+    
+    width: 88%;
+    padding: 25px;
+    margin-left: 6%;
+    margin-right: 6%;
+ }
+
+.my_container {
+    border: 2px solid rgb(228, 176, 109);
+    background-color: rgb(253, 239, 217);
+    border-radius: 10px;
+    padding: 8px;
+    width: 88%;
+    margin-left: 6%;
+    margin-right: 6%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.show_details2 {
+.my_container > div {
+    width: 18%;
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+  }
+
+  .my_container #actions {
+    flex-direction: row !important;
+  }
+
+  .roboto-condensed-text {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-size: italic;
+  }
+
+  .rc-sub_text {
+    font-weight: 400;
     font-size: 20px;
-    border-color:grey;
-    border-width: 1px;
-    width: 80%;
-    margin-right: 10%;
-    margin-left: 10%;
-}
+  } 
+
+  .roboto-condensed-title {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: bold;
+  }

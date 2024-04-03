@@ -1,33 +1,9 @@
-<h1 class="text-uppercase font-weight-bold text-center">My manga list</h1>
-<div class="text-center">
-<%= link_to 'Add a new manga', new_manga_path, class: "btn btn-dark" %>
+<div class="roboto-condensed-title my_nav">
+    <h1>MY MANGA LIST 💥</h1>
+    <div>
+        <%= link_to 'Add a new manga', new_manga_path, class: "btn btn-dark btn-lg" %>
+    </div>
 </div>
 
-<table id="index_table" class="table table-striped table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Mangaka</th>
-            <th scope="col">Collected</th>
-            <th scope="col">Status</th>
-            <th scope="col">Actions</th>
-        </tr>
-    </thead>
-    <tbody>  
-        <% @mangas.each do |manga| %>
-            <tr>
-                <td><%= manga.title %></td>
-                <td><%= manga.mangaka %></td>
-                <td><%= manga.collected %></td>
-                <td><%= manga.status %></td>
-                <td>
-                    <%= link_to 'Show', manga_path(manga.id), class: "btn btn-primary" %>
-                    <%= link_to 'Edit', edit_manga_path(manga.id), class: "btn btn-warning" %>
-                    <%= link_to 'Delete', manga_path(manga.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
-                </td>
-            <tr>
-        <% end %>      
-    </tbody>
-</table>
-
+<%= render 'test' %>
 

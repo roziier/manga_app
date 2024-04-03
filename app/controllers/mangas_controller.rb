@@ -12,10 +12,10 @@ class MangasController < ApplicationController
     end
 
     def create
-        @manga = Manga.new(params.require(:manga).permit(:title, :mangaka, :collected, :status))
+        @manga = Manga.new(manga_params)
         if @manga.save
             flash[:notice] = "New manga was created successfully"
-            redirect_to manga_path(@manga)
+            redirect_to mangas_path
         else
             render 'new'
         end
@@ -27,9 +27,9 @@ class MangasController < ApplicationController
 
     def update
         @manga = Manga.find(params[:id])
-        if @manga.update(params.require(:manga).permit(:title, :mangaka, :collected, :status))
+        if @manga.update(manga_params)
             flash[:notice] = "Your manga was updated successfully"
-            redirect_to manga_path(@manga)
+            redirect_to mangas_path
         else
             render 'edit'
         end
@@ -40,5 +40,10 @@ class MangasController < ApplicationController
         @manga.destroy
         flash[:notice] = "Manga was deleted successfully"
         redirect_to mangas_path
+    end
+
+    private
+    def manga_params
+        params.require(:manga).permit(:title, :mangaka, :collected, :status)
     end
 end

@@ -1,0 +1,36 @@
+
+
+    <% @mangas.each do |manga| %>
+        <div class="my_container roboto-condensed-text">
+        
+            <div>
+                <div>Title</div>
+                
+                <div class="rc-sub_text"><%= manga.title %></div>
+            </div>
+            <div>
+                <div>Mangaka</div>
+                
+                <div class="rc-sub_text"><%= manga.mangaka %></div>
+            </div>
+            <div>
+                <div>Collected</div>
+                
+                <div class="rc-sub_text"><%= manga.collected %></div>
+            </div>
+            <div>
+                <div>Status</div>
+                
+                <div class="rc-sub_text"><%= manga.status %></div>
+            </div>
+            <div>
+                <div>Actions</div>
+                
+                <div id="actions">
+                    <%= link_to 'Show', manga_path(manga.id), class: "btn btn-primary" %>
+                    <%= link_to 'Edit', edit_manga_path(manga.id), class: "btn btn-warning" %>
+                    <%= link_to 'Delete', manga_path(manga.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+                </div>
+            </div>
+        </div>   
+    <% end %>

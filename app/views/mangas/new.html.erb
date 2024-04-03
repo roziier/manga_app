@@ -1,4 +1,4 @@
-<h1 id="new" class="text-uppercase font-weight-bold text-center">Add a new manga</h1>
+<h1 id="new" class="text-uppercase font-weight-bold text-center roboto-condensed-title">Add a new manga</h1>
 
 <% if @manga.errors.any? %>
     <% @manga.errors.full_messages.each do |msg| %>
@@ -8,37 +8,6 @@
     <% end %>
 <% end %>
 
-<div class="show_details2">
-<%= form_with(model: @manga, data: { turbo: false }, local: true) do |f| %>
+<%= render 'form' %>
 
-    <div class="mb-3">
-      <%= f.label :title, class: "form-label" %>
-      <br/>
-      <%= f.text_field :title, class: "form-control" %>
-    </div>
 
-    <div class="mb-5">
-      <%= f.label :mangaka, class: "form-label" %>
-      <br/>
-      <%= f.text_area :mangaka, class: "form-control" %>
-      </div>
-
-    <div class="mb-3">
-      <%= f.label :collected, class: "form-label" %>
-      <br/>
-      <%= f.text_area :collected, class: "form-control" %>
-      </div>
-
-    <div class="mb-3">
-      <%= f.label :status, class: "form-label" %>
-      <br/>
-      <%= f.text_area :status, class: "form-control" %>
-    </div>
-
-    <div class="btn btn-primary">
-      <%= f.submit %>
-    <div>
-    
-<% end %>
-
-</div>
