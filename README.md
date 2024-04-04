@@ -1,24 +1,15 @@
 # README
+Ruby on Rails 7 - ruby 3.3.0
+First project using Turbo Frames and Stream.
+The webapp will allows you to add a new manga in your colection.
+You will have then the possibility to edit, delete and show it.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The goal is to have manage the create and edit action in a single page without changing route.
 
-Things you may want to cover:
+In the future I'll implement Flash messages
 
-* Ruby version
+How to run the project
+1 - rails db:migrate 
+2 - rails s
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
