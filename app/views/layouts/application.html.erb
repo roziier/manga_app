@@ -14,11 +14,6 @@
   </head>
 
   <body>
-    <% flash.each do |i, msg| %>
-      <li style="color:green">
-            <%= msg %>
-        </li>
-    <% end %>
     <%= yield %>
   </body>
 </html>

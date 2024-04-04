@@ -1,0 +1,4 @@
+<%= turbo_stream.prepend "mangas" do %>
+    <%= render 'test' %>
+<% end %>
+<%= turbo_stream.update Manga.new, "" %>

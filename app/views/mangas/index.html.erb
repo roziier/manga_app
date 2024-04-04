@@ -1,9 +1,12 @@
 <div class="roboto-condensed-title my_nav">
-    <h1>MY MANGA LIST 💥</h1>
+    <h1>MY MANGA LIST 💥📓💥</h1>
     <div>
-        <%= link_to 'Add a new manga', new_manga_path, class: "btn btn-dark btn-lg" %>
+        <%= link_to 'Add a new manga', new_manga_path, data: {turbo_frame: dom_id(Manga.new)}, class: "btn btn-dark btn-lg" %>
     </div>
 </div>
 
-<%= render 'test' %>
+<%= turbo_frame_tag Manga.new %>
 
+<%= turbo_frame_tag "mangas" do %>
+    <%= render 'test' %>
+<% end %>

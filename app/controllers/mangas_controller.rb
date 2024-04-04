@@ -8,16 +8,19 @@ class MangasController < ApplicationController
     end 
 
     def new
-        @manga = Manga.new()
+        @manga = Manga.new
     end
 
     def create
+        @mangas = Manga.all
         @manga = Manga.new(manga_params)
         if @manga.save
-            flash[:notice] = "New manga was created successfully"
-            redirect_to mangas_path
+            respond_to do |format|
+                format.html {redirect_to mangas_path, notice: "Manga was successfully created"}
+                format.turbo_stream
+            end
         else
-            render 'new'
+            render 'new', status: :unprocessable_entity
         end
     end
 
@@ -28,18 +31,16 @@ class MangasController < ApplicationController
     def update
         @manga = Manga.find(params[:id])
         if @manga.update(manga_params)
-            flash[:notice] = "Your manga was updated successfully"
-            redirect_to mangas_path
+            redirect_to mangas_path, notice: "Manga was successfully updated"
         else
-            render 'edit'
+            render 'edit', status: :unprocessable_entity
         end
     end
 
     def destroy
         @manga = Manga.find(params[:id])
         @manga.destroy
-        flash[:notice] = "Manga was deleted successfully"
-        redirect_to mangas_path
+        redirect_to mangas_path, notice: "Manga was successfully deleted"
     end
 
     private

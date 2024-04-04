@@ -1,6 +1,6 @@
 
-
-    <% @mangas.each do |manga| %>
+<% @mangas.each do |manga| %>
+    <%= turbo_frame_tag "manga_#{manga.id}" do %>
         <div class="my_container roboto-condensed-text">
         
             <div>
@@ -27,10 +27,12 @@
                 <div>Actions</div>
                 
                 <div id="actions">
-                    <%= link_to 'Show', manga_path(manga.id), class: "btn btn-primary" %>
+                    <%= link_to 'Show', manga_path(manga.id), data: {turbo_frame: "_top" }, class: "btn btn-primary" %>
                     <%= link_to 'Edit', edit_manga_path(manga.id), class: "btn btn-warning" %>
-                    <%= link_to 'Delete', manga_path(manga.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+                    <%= link_to 'Delete', manga_path(manga.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?", turbo_frame: "_top" }, class: "btn btn-danger" %>
                 </div>
             </div>
         </div>   
     <% end %>
+<% end %>
+

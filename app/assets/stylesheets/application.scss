@@ -78,6 +78,20 @@
     justify-content: space-between;
 }
 
+.error_container {
+  border: 2px solid rgb(228, 176, 109);
+  background-color: rgb(253, 239, 217);
+  border-radius: 10px;
+  padding: 8px;
+  width: 88%;
+  margin-left: 6%;
+  margin-right: 6%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .my_container > div {
     width: 18%;
     text-align: center;

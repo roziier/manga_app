@@ -1,13 +1,19 @@
 <h1 id="new" class="text-uppercase font-weight-bold text-center roboto-condensed-title">Add a new manga</h1>
 
-<% if @manga.errors.any? %>
-    <% @manga.errors.full_messages.each do |msg| %>
-        <li style="color:red">
-            <%= msg %>
-        </li>
+
+<%= turbo_frame_tag @manga do %>
+        
+    <% if @manga.errors.any? %>
+        <div class="error_container">
+            <% @manga.errors.full_messages.each do |msg| %>
+                <li style="color:red">
+                    <%= msg %>
+                </li>
+            <% end %>
+        </div>
     <% end %>
+    
+
+    <%= render 'form' %>
 <% end %>
-
-<%= render 'form' %>
-
 
