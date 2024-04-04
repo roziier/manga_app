@@ -16,7 +16,7 @@ class MangasController < ApplicationController
         @manga = Manga.new(manga_params)
         if @manga.save
             respond_to do |format|
-                format.html {redirect_to mangas_path, notice: "Manga was successfully created"}
+                format.html {redirect_to mangas_path, notice: "Manga was successfully added"}
                 format.turbo_stream
             end
         else
